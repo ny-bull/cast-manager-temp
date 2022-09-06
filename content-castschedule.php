@@ -3,7 +3,7 @@
 
 <?php
 	$cast_fields = get_post_custom(); //カスタムフィールドを全部取得
-	$cast_screens = json_decode($cast_fields['_cast_screens'][0]); //画像配列を用意
+	$cast_screens = json_decode($cast_fields['_krc_cast_screens'][0]); //画像配列を用意
 	$cast_type_terms = get_the_terms($post->ID, 'krc_type'); //タイプタクソノミーを取得
 	$cast_grade_terms = get_the_terms($post->ID, 'krc_grade'); //グレードタクソノミーを取得
 	$cast_new_terms = get_the_terms($post->ID, 'krc_new'); //新人区分タクソノミーを取得

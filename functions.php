@@ -333,3 +333,9 @@ function imagepassshort($arg) {
 	return $content;
 }
 add_action('the_content', 'imagepassshort');
+
+/* 子テーマのstyle.cssを読み込む */
+add_action( 'wp_enqueue_scripts', 'my_enqueue_style_child' ); 
+function my_enqueue_style_child() { 
+    wp_enqueue_style( 'child-style', get_stylesheet_uri() );
+} 
