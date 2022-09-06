@@ -3,9 +3,18 @@
 <!-- ヘッダとパンくず無理やり変更 -->
 <div class="section page-header">
 	<div class="container">
-		<div class="row">
+		<div class="row bg_img">
 			<div class="col-md-12">
-				<h1 class="page-header_pageTitle">セラピスト一覧</h1>
+				<h1 class="page-header_pageTitle">THERAPIST <br>
+					<span class="page-header_sub_Title">セラピスト一覧</span>
+				</h1>
+				<span>
+					あなたのお好みのセラピストは？
+				</span>
+				<br>
+				<span>
+					コンセプトは、”Touch & Talk”。気になるセラピストをさがして、絶世の美に癒やされてください。
+				</span>
 			</div>
 		</div>
 	</div>
@@ -13,8 +22,9 @@
 		document.title= document.title.replace('キャスト管理','セラピスト一覧');
 	</script>
 </div>
-<div class="section breadSection">
+<!-- <div class="section breadSection">
 	<div class="container">
+
 		<div class="row">
 			<ol class="breadcrumb" itemtype="http://schema.org/BreadcrumbList">
 				<li id="panHome" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
@@ -22,11 +32,23 @@
 				</li>
 				<li>
 					<span>セラピスト一覧</span></li>
-				</ol>
+			</ol>
 		</div>
 	</div>
+</div> -->
+<div class="description">
+	<span class="title"> 
+		滋賀メンズエステ【SWEET ROSE スイートロゼ】の
+		<br>
+		セラピストのご紹介	
+	</span>
+	<br>
+	<br>
+	<span class="detail">
+		「心」と「身体」と「おもてなし」ができる女性を厳選しております！ <br> 
+		究極の全身アロマケアと最高級の施術をご堪能くださいませ。
+	</span>
 </div>
-
 <?php
 // Dealing with old files.
 // Actually, it's ok to only use get_template_part().
@@ -133,11 +155,7 @@ do_action( 'lightning_breadcrumb_after' );
 
 
 
-<?php if ( lightning_is_subsection_display() ){ ?>
-	<div class="<?php lightning_the_class_name( 'sideSection' ); ?>">
-	<?php get_sidebar( get_post_type() ); ?>
-	</div><!-- [ /.subSection ] -->
-<?php } ?>
+
 
 <?php do_action( 'lightning_additional_section' ); ?>
 

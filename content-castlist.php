@@ -9,14 +9,20 @@
 	<a href="/cast/<?php echo esc_html($cast_fields['_krc_name'][0]);?>">
 		<figure>
 			<?php if( empty($cast_screens) ): ?>
-				<img src="<?php echo get_stylesheet_directory_uri();?>/images/noimg.jpg" alt="<?php the_title();?>">
+				<img src="<?php echo get_stylesheet_directory_uri();?>/images/noimg.png" alt="<?php the_title();?>">
 			<?php else: ?>
 				<img src="<?php echo $cast_screens[0];?>" alt="<?php the_title();?>">
 			<?php endif;?>
 		</figure>
 		<figcaption>
-			<span class="cast-name"><?php echo esc_html($cast_fields['_krc_name'][0]);?>(<?php echo esc_html($cast_fields['_krc_age'][0]);?>歳)</span>
-			<span class="cast-size">T:<?php echo esc_html($cast_fields['_krc_tall'][0]);?> B:<?php echo esc_html($cast_fields['_krc_bust'][0]);?>(<?php echo esc_html($cast_fields['_krc_cups'][0]);?>) W:<?php echo esc_html($cast_fields['_krc_waist'][0]);?> H:<?php echo esc_html($cast_fields['_krc_hips'][0]);?></span>
+			<?php
+			echo '<script>';
+			echo 'console.log('. json_encode( $cast_fields ) .')';
+			echo '</script>';
+			?>
+			<span class="cast-name"><?php echo esc_html($cast_fields['_krc_name'][0]);?></span>
+			<span class="cast-size">T.<?php echo esc_html($cast_fields['_krc_tall'][0]);?> B.<?php echo esc_html($cast_fields['_krc_bust'][0]);?>(<?php echo esc_html($cast_fields['_krc_cups'][0]);?>)</span>
+			<span class="cast-com"><?php echo esc_html($cast_fields['krc_pr'][0]);?></span>
 		</figcaption>
 	</a>
 	<?php if ( $fncName != 'todaysCastHtml'): ?>
