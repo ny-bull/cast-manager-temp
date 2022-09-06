@@ -1,0 +1,541 @@
+@charset "utf-8";
+/*
+Theme Name: Lightning Child Sample
+Theme URI: ★ テーマの公式サイトなどのURL（空欄でも可） ★
+Template: lightning
+Description: ★ テーマの説明（空欄でも可） ★
+Author: ★ テーマ作成者の名前（空欄でも可） ★
+Tags:
+Version: 0.1.2
+*/
+
+/**
+ * 共通
+ */
+h2.sub-section {
+    padding-bottom: 8px;
+    position: relative;
+    border: 0px;
+    text-align: center;
+}
+
+h2.sub-section:first-child {
+    margin-bottom: 50px;
+}
+
+h2.sub-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    border: 0px;
+    background: linear-gradient(to right, transparent 0%, #cf2e2e 50%, #cf2e2e 50%, transparent 100%);
+}
+
+.page-header {
+    background-color: #f1d2d0;
+    background: linear-gradient(25deg, transparent 0%, #cf2e2e 50%, #cf2e2e 50%, transparent 100%);
+}
+
+.wp-block-group.is-style-vk-group-shadow.home-block {
+    margin: 20px 0px;
+}
+
+.wp-block-button__link.has-white-color.has-text-color.has-background {
+    background-color: #d03232;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.mobile-linebox {
+    border: 3px solid #efefef;
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .5);
+}
+
+.mobile-linebox>div {
+    margin: 15px 0px;
+}
+
+/**
+ * キャストスケジュール
+ */
+
+.krc_calendar {
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    font-size: 13px;
+    margin: 24px 0;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.22);
+}
+
+.krc_calendar dl {
+    margin: 0px;
+    border: 0px;
+    border-right: 1px solid #ccc;
+    width: 20%;
+    float: left;
+    display: block;
+}
+
+.krc_calendar dl dt {
+    border: 0px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    padding: 2px;
+    background-color: #f9e7e7;
+    font-weight: normal;
+}
+
+.krc_calendar dl dd {
+    border: 0px;
+    text-align: center;
+    text-decoration: none;
+    padding: 24px 2px;
+    display: block;
+    color: #ff9900;
+    font-weight: bold;
+}
+
+
+/**
+ * 出勤情報
+ */
+.week_calendar ul {
+    list-style: none;
+    overflow: hidden;
+    margin: 5px 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.week_calendar ul li {
+    position: relative;
+    float: left;
+    width: 14%;
+}
+
+.week_calendar ul li a {
+    display: block;
+    padding: 17px 5%;
+    width: 99%;
+    color: #fff;
+    background-color: #ff0000;
+    text-align: center;
+    text-decoration: none;
+}
+
+.week_calendar ul li.target a {
+    background-color: #ff8080;
+}
+
+.week_calendar ul li a:hover {
+    background-color: #ffaaaa;
+}
+
+/**
+ * キャスト一覧
+ */
+
+.rank-box.bpink {
+    border: 1px solid #efefef;
+    background-color: #fcf4f4;
+    border-radius: 5px;
+    padding: 15px 0px;
+    margin-bottom: 20px;
+}
+
+.one-cast {
+    display: inline-block;
+    position: relative;
+    max-width: 235px;
+    height: 380px;
+    margin: 0 12px 4px;
+    padding: 0;
+    text-align: center;
+    line-height: 1.3em;
+    overflow: hidden;
+    letter-spacing: normal;
+    border-radius: 3px;
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.22);
+}
+
+.rank-box>.one-cast {
+    margin: 0 18px 4px
+}
+
+.one-cast a.iframe {
+    z-index: 8;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    color: #111;
+}
+
+.one-cast figure {
+    position: relative;
+    margin: 0 auto 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.one-cast figure img {
+    width: 235px;
+    height: v;
+}
+
+.one-cast figcaption {
+    position: relative;
+    width: 100%;
+    height: 68px;
+    margin: 0;
+    padding: 5px 0 0;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.2em;
+}
+
+/**
+ * キャスト個人ページ
+ */
+.cast {
+    overflow: hidden;
+    border: 0px solid gray;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.22);
+    padding: 20px;
+}
+
+.cast-photo {
+    padding: 10px;
+    width: 50%;
+    min-width: 300px;
+    float: left;
+}
+
+.cast-profile {
+    padding: 10px;
+    width: 50%;
+    min-width: 300px;
+    float: left;
+}
+
+.cast-schedule {
+    width: 100%
+}
+
+.cast-meta {
+    overflow: hidden;
+    text-align: center;
+}
+
+.cast-meta-left {
+    width: 49%;
+    float: left;
+    text-align: right;
+    background-color: #f9e7e7;
+    margin: 1px;
+    padding: 10px;
+}
+
+.cast-meta-right {
+    width: 49%;
+    float: left;
+    text-align: left;
+    margin: 1px;
+    padding: 10px;
+}
+
+.cast-pr {
+    font-size: 18px;
+    overflow: hidden;
+    line-height: 1.8;
+    padding: 15px 10px;
+    ;
+}
+
+.cast-pr pre {
+    white-space: pre-wrap;
+}
+
+#slider,
+#thumbnail {
+    border: 5px solid #e58f8f;
+}
+
+#slider {
+    margin-bottom: -10px;
+    max-height: 600px;
+    overflow: hidden;
+}
+
+#slider ul {
+    overflow: hidden;
+}
+
+#thumbnail {
+    max-height: 170px;
+    overflow: hidden;
+}
+
+#thumbnail .slides li {
+    width: auto !important;
+}
+
+#thumbnail .slides img {
+    width: auto;
+    max-height: 170px;
+    -moz-user-select: none;
+}
+
+#thumbnail img {
+    opacity: 0.5;
+}
+
+#thumbnail .flex-active-slide img {
+    opacity: 1;
+    cursor: default;
+}
+
+/**
+ * ツイッターアイコン
+ */
+.one-cast .tw {
+    right: 0px;
+    top: 260px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    display: block;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 26;
+    background-image: url(images/twitter_icon.png);
+}
+
+.one-cast .tw:hover {
+    opacity: 0.8;
+}
+
+/**
+ * 当日出勤バッジ
+ */
+.one-cast .todays_cast {
+    right: 0px;
+    top: 0px;
+    border-radius: 3px;
+    background-color: #ed561b;
+    color: #fff;
+    font-size: 14px;
+    opacity: 0.9;
+    font-weight: normal;
+    padding: 5px;
+}
+
+.one-cast .todays_cast {
+    position: absolute;
+    display: block;
+    z-index: 26;
+}
+
+/**
+ * 出勤時間バッジ
+ */
+.one-cast .worktime {
+    text-align: left;
+    left: 0px;
+    top: 275px;
+    width: 100%;
+    background-color: #ed561b;
+    color: #fff;
+    font-size: 18px;
+    opacity: 0.8;
+    font-weight: normal;
+    padding: 5px 5px 5px 20px;
+    border-radius: 0px;
+}
+
+.one-cast .worktime {
+    position: absolute;
+    display: block;
+    z-index: 26;
+}
+
+/**
+ * 新人バッジ
+ */
+.one-cast .new_cast {
+    left: 0px;
+    top: 0px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    display: block;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 26;
+    background-image: url(images/new_icon.png);
+    opacity: 0.9;
+}
+
+/**
+ * 新人バッジ
+ */
+.one-cast .rank {
+    left: 0px;
+    top: 300px;
+    width: 70px;
+    height: 50px;
+    position: absolute;
+    display: block;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 26;
+    opacity: 0.9;
+}
+
+/**
+ * キャスト情報
+ */
+.one-cast a {
+    text-decoration: none;
+}
+
+.one-cast figcaption span.cast-name {
+    display: block;
+    font-size: 130%;
+    color: #ff8080;
+    padding: 10px 0px;
+}
+
+.one-cast figcaption span.cast-size {
+    display: block;
+    color: #000;
+}
+
+.one-cast figcaption span.cast-time {
+    display: block;
+    color: #e1053b;
+}
+
+/**
+ * 電話ボタン
+ */
+.vk_button_link.btn {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 6px 0px;
+    opacity: 0.8;
+    z-index: 100;
+}
+
+.vk_button_link_before {
+    margin-right: 0.0rem;
+}
+
+.vk_button_link {
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 25px;
+    background-color: #7bdcb5;
+    border: 1px solid #7bdcb5;
+    color: #fff;
+}
+
+/**
+ * スマホ対応
+ */
+@media screen and (max-width:480px) {
+
+    /* 画面サイズが480pxからはここを読み込む */
+    #thumbnail {
+        display: none;
+    }
+
+    .home-block,
+    .box-body {
+        text-align: center;
+        font-weight: normal;
+    }
+
+    .krc_calendar dl {
+        min-height: 135px;
+    }
+
+    .wp-block-group.is-style-vk-group-shadow.home-block {
+        padding: 5px 0px;
+    }
+
+    .cast {
+        margin: 10px 15px;
+    }
+
+    .one-cast {
+        max-width: 145px;
+        height: 245px;
+        margin: 0px 5px 4px;
+    }
+
+    .one-cast figure {
+        height: 135px;
+    }
+
+    .one-cast figure img {}
+
+    .one-cast figcaption span.cast-name {
+        display: block;
+        font-size: 110%;
+        color: #ff8080;
+        padding: 10px 0px;
+    }
+
+    /**
+	 * ツイッターアイコン
+	 */
+    .one-cast .tw {
+        top: 105px;
+        width: 35px;
+        height: 35px;
+    }
+
+    /**
+	 * 当日出勤バッジ
+	 */
+    .one-cast .todays_cast {
+        font-size: 10px;
+        opacity: 0.7;
+    }
+
+    /**
+	 * 出勤時間バッジ
+	 */
+    .one-cast .worktime {
+        top: 0px;
+        top: 125px;
+        font-size: 10px;
+        text-align: left;
+        padding: 5px 5px;
+    }
+
+    /**
+	 * 新人バッジ
+	 */
+    .one-cast .new_cast {
+        width: 35px;
+        height: 35px;
+    }
+}
