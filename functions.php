@@ -169,7 +169,8 @@ function schedulesHtml()
 		"土"
 	);
 
-	echo '<div class="">週間のスケジュール </div>';
+	echo '<div class="sche-title">週間のスケジュール </div>';
+
 
 	echo '<nav class="week_calendar"><ul>';
 	for ($i = 0;$i <= $len;$i++)
@@ -180,12 +181,9 @@ function schedulesHtml()
 		echo '<li class="' . mb_strtolower($y) . '"><a href="' . home_url('/') . '/schedule/?works=' . date('Y-m-d', strtotime('+' . $i . ' day')) . '">' . strtoupper(date('n/j (' . $week[$yy] . ')', strtotime('+' . $i . ' day'))) . '</a></li>';
 	}
 	echo '</ul></nav>';
-	$w = date('w', strtotime($day));
-	echo '<div class="wp-block-group__inner-container home-block">';
-	echo '<h2 class="sub-section">' . date('n/j', strtotime($day));
-	echo '(' . $week[$w] . ')';
-	echo 'の出勤スケジュール</h2>';
 
+	// 通常であればネスト用のショートコードを使用するが、スケジュールは無理そうなので手動で付与
+	echo '<div class="cast-nest">';
 	if (!$works)
 	{
 		//予定がない場合
@@ -225,6 +223,7 @@ function schedulesHtml()
 		//休み
 		echo '定休日';
 	}
+	echo '</div>';
 	return ob_get_clean();
 }
 add_shortcode('scheduleshtml', 'schedulesHtml');
@@ -247,6 +246,8 @@ function todaysCastHtml($day = '')
 function addSchedules($works)
 {
 	$schedule = 'schedule';
+	// 通常であればネスト用のショートコードを使用するが、スケジュールは無理そうなので手動で付与
+	echo '<div class="cast-nest">';
 
 	if (!$works)
 	{
@@ -290,6 +291,7 @@ function addSchedules($works)
 		//休み
 		echo '定休日';
 	}
+	echo '</div>';
 }
 add_shortcode('todayscasthtml', 'todaysCastHtml', 0);
 

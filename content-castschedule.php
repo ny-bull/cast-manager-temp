@@ -19,7 +19,8 @@
 			</figure>
 			<figcaption>
 				<span class="cast-name"><?php echo esc_html($cast_fields['_krc_name'][0]);?>(<?php echo esc_html($cast_fields['_krc_age'][0]);?>歳)</span>
-				<span class="cast-size">T:<?php echo esc_html($cast_fields['_krc_tall'][0]);?> B:<?php echo esc_html($cast_fields['_krc_bust'][0]);?>(<?php echo esc_html($cast_fields['_krc_cups'][0]);?>) W:<?php echo esc_html($cast_fields['_krc_waist'][0]);?> H:<?php echo esc_html($cast_fields['_krc_hips'][0]);?></span>
+				<span class="cast-size">T.<?php echo esc_html($cast_fields['_krc_tall'][0]);?> B.<?php echo esc_html($cast_fields['_krc_bust'][0]);?>(<?php echo esc_html($cast_fields['_krc_cups'][0]);?>)</span>
+				<span class="cast-pr"><?php echo esc_html($cast_fields['krc_pr'][0]);?></span>
 			</figcaption>
 		</a>
 		<?php if ( $fncName != 'outNewType'): ?>
@@ -27,7 +28,7 @@
 				<span class="new_cast badge"></span>
 			<?php endif;?>
 		<?php endif;?>
-		<span class="worktime badge"><?php echo $work['starttime']; ?> ～ <?php echo $work['endtime']; ?></span>
+		<p class="worktime"><i class='far fa-clock'></i><?php echo $work['starttime']; ?> ～ <?php echo $work['endtime']; ?></p>
 		<?php if ( !empty($cast_fields['tw_id'][0]) ):?>
 			<a class="tw" href="https://twitter.com/<?php echo esc_html($cast_fields['tw_id'][0]);?>" target="_blank"></a>
 		<?php endif;?>

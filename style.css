@@ -22,9 +22,9 @@ Version: 0.1.2
 .header-nest {
     background-image: url("https://cast-manager-test.com/wp-content/uploads/2022/09/bg_image.png");
     background-size: cover;
-    padding: 15%;
     background-color: rgba(255, 255, 255, 0.2);
     background-blend-mode: lighten;
+    padding: 20px 10px;
 }
 
 /*Footer*/
@@ -78,6 +78,10 @@ div.container h2 {
     max-width: 100%;
 }
 
+.normal-nest {
+    width: 80%;
+    margin: auto;
+}
 
 div.description {
     text-align: center;
@@ -104,6 +108,11 @@ div.siteContent {
 /**
  * キャストスケジュール
  */
+
+div.sche-title {
+    color: grey;
+    font-size: medium;
+}
 
 .krc_calendar {
     border-top: 1px solid #ccc;
@@ -191,27 +200,47 @@ div.siteContent {
 
 div.cast-nest {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
+    flex-direction: row;
     max-width: 1140px;
     margin: auto;
+    align-items: stretch
 }
 
 .one-cast {
+    position: relative;
     width: 24%;
-    margin: 10px 0;
-    height: 500px;
+    margin: 10px 5px;
     overflow: hidden;
     letter-spacing: normal;
     border-radius: 3px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.22);
     background-color: #fff;
+    padding-bottom: 10px;
+
 }
 
-@media screen and (max-width:1400px) {
-    .one-cast {
-        width: 33%;
-    }
+.one-cast.todays-badge::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: linear-gradient(135deg, hsla(319, 78%, 51%, 0.808) 0 2rem, transparent 4rem);
+    content: '';
+}
+
+.one-cast.todays-badge::after {
+    position: absolute;
+    top: 0.6rem;
+    left: 0;
+    color: white;
+    font-size: 0.8rem;
+    transform: rotate(-45deg);
+    text-transform: uppercase;
+    text-align: center;
+    content: '本日出勤';
 }
 
 @media screen and (max-width:1000px) {
@@ -258,7 +287,6 @@ div.cast-nest {
     text-align: center;
     line-height: 1.2em;
     color: #000;
-    height: 100%
 }
 
 /**
@@ -433,34 +461,31 @@ div.cast-nest {
     padding: 5px;
 }
 
-.one-cast .todays_cast {
-    position: absolute;
-    display: block;
-    z-index: 26;
+
+/**
+ * 出勤時間
+ */
+.worktime {
+    text-align: center;
+    font-weight: bold;
+    background: linear-gradient(to right, #ff5ea0 0, #ff8f92 100%);
+    padding: 5px 0;
+    color: #fff;
+    border-radius: 30px;
+    width: 80%;
+    margin: 10px auto;
 }
 
 /**
- * 出勤時間バッジ
+ * スマホ対応
  */
-.one-cast .worktime {
-    text-align: left;
-    left: 0px;
-    top: 275px;
-    width: 100%;
-    background-color: #ed561b;
-    color: #fff;
-    font-size: 18px;
-    opacity: 0.8;
-    font-weight: normal;
-    padding: 5px 5px 5px 20px;
-    border-radius: 0px;
+@media screen and (max-width:780px) {
+    .worktime {
+        float: right;
+        width: 50%;
+    }
 }
 
-.one-cast .worktime {
-    position: absolute;
-    display: block;
-    z-index: 26;
-}
 
 /**
  * 新人バッジ
@@ -624,13 +649,6 @@ div.cast-nest {
     /**
 	 * 出勤時間バッジ
 	 */
-    .one-cast .worktime {
-        top: 0px;
-        top: 125px;
-        font-size: 10px;
-        text-align: left;
-        padding: 5px 5px;
-    }
 
     /**
 	 * 新人バッジ
