@@ -74,6 +74,15 @@
 
 	<?php do_action( 'lightning_copySection_before' ); ?>
 
+	<div class="box-follow">
+            <p class="title-sns">FOLLOW US</p>
+            <ul>
+                <li><a href="https://twitter.com/shiga_rose" target="_blank" class="fab fa-twitter fa-1x"></a></li>
+                <li><a href="https://www.instagram.com/shiga_rose/" target="_blank" class="fab fa-instagram fa-1x"></a></li>
+                <li><a href="http://line.me/R/ti/p/%40096hzoga" target="_blank" class="fab fa-line fa-1x"></a></li>
+            </ul>
+        </div>
+
 	<div class="container sectionBox copySection text-center">
 			<?php lightning_the_footerCopyRight(); ?>
 	</div>

@@ -169,6 +169,8 @@ function schedulesHtml()
 		"土"
 	);
 
+	echo '<div class="">週間のスケジュール </div>';
+
 	echo '<nav class="week_calendar"><ul>';
 	for ($i = 0;$i <= $len;$i++)
 	{
@@ -325,6 +327,33 @@ function outNewType () {
 }
 add_shortcode('newcasthtml', 'outNewType');
 
+
+/**
+ * 全女性を取得用のショートコード
+ */
+function outAllGirls () {
+	ob_start();
+
+	$args = array(
+	'post_type' => 'cast',
+	'posts_per_page' => -1
+	);
+
+	query_posts($args);
+	if ( have_posts() ) :
+		while ( have_posts() ) :
+			the_post();
+			set_query_var('fncName', 'outAllGirls');
+			get_template_part( 'content', 'castlist' ); //content-castlist.phpは用意しておいて下さい。
+		endwhile;
+	endif;
+
+	wp_reset_query();
+	return ob_get_clean();
+
+}
+add_shortcode('casthtml', 'outAllGirls');
+
 /**
  * FTPアップしたイメージにアクセスしやすくする
  */
@@ -338,4 +367,29 @@ add_action('the_content', 'imagepassshort');
 add_action( 'wp_enqueue_scripts', 'my_enqueue_style_child' ); 
 function my_enqueue_style_child() { 
     wp_enqueue_style( 'child-style', get_stylesheet_uri() );
-} 
+}
+
+
+//囲み型ショートコードで出力(ボックスを装飾)
+function box_func( $atts, $content = null ) {
+    return '<div class="box">' . $content . '</div>';
+}
+add_shortcode('box', 'box_func');
+
+// キャスト一覧用nestクラス
+function nest_func( $atts, $content = null ) {
+    return '<div class="cast-nest">'.do_shortcode($content).'</div>';
+}
+add_shortcode('nest', 'nest_func');
+
+// 通常コンテンツ用のネストクラス
+function nest_normal_func( $atts, $content = null ) {
+    return '<div class="normal-nest">'.do_shortcode($content).'</div>';
+}
+add_shortcode('normal-nest', 'nest_normal_func');
+
+// header用ネストクラス
+function header_nest_func( $atts, $content = null ) {
+    return '<div class="header-nest">'.do_shortcode($content).'</div>';
+}
+add_shortcode('header-nest', 'header_nest_func');
