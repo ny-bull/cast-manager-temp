@@ -15,7 +15,16 @@
 			<?php else: ?>
 				<img src="<?php echo $cast_screens[0];?>" alt="<?php the_title();?>">
 			<?php endif;?>
+			<?php if  ($fncName != 'outNewType'): ?>
+				<?php if ( !empty($cast_grade_terms[0]->name) ):?>
+					<span class="grade <?php echo $cast_grade_terms[0]->slug?>"><?php echo $cast_grade_terms[0] -> name ?></span>
+				<?php endif;?>
+				
+			<?php endif;?>
 		</figure>
+		<?php
+echo '<script>console.log(' . json_encode($cast_grade_terms) . ');</script>';
+?>
 		<figcaption>
 			<span class="cast-name"><?php echo esc_html($cast_fields['_krc_name'][0]);?></span>
 			<span class="cast-size">T.<?php echo esc_html($cast_fields['_krc_tall'][0]);?> B.<?php echo esc_html($cast_fields['_krc_bust'][0]);?>(<?php echo esc_html($cast_fields['_krc_cups'][0]);?>)</span>
@@ -23,11 +32,6 @@
 			<span class="cast-com"><?php echo esc_html($comment);?></span>
 		</figcaption>
 	</a>
-	<?php if ( ($fncName != 'outNewType') or ($fncName != 'outAllGilrs')): ?>
-		<?php if ( !empty($cast_new_terms[0]->name) ):?>
-			<span class="new_cast badge"></span>
-		<?php endif;?>
-	<?php endif;?>
 	<?php if ( !empty($cast_fields['tw_id'][0]) ):?>
 		<a class="tw" href="https://twitter.com/<?php echo esc_html($cast_fields['tw_id'][0]);?>" target="_blank"></a>
 	<?php endif;?>
