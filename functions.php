@@ -395,3 +395,9 @@ function header_nest_func( $atts, $content = null ) {
     return '<div class="header-nest">'.do_shortcode($content).'</div>';
 }
 add_shortcode('header-nest', 'header_nest_func');
+
+// system nest
+function system_nest( $atts, $content = null ) {
+    return '<div class="system-nest">'.do_shortcode($content).'</div>';
+}
+add_shortcode('system-nest', 'system_nest');

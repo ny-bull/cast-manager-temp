@@ -3,10 +3,10 @@
 Theme Name: Lightning Child Sample
 Theme URI: ★ テーマの公式サイトなどのURL（空欄でも可） ★
 Template: lightning
-Description: ★ テーマの説明（空欄でも可） ★
-Author: ★ テーマ作成者の名前（空欄でも可） ★
+Description: cast-manager用フロントテーマ
+Author: nyuta
 Tags:
-Version: 0.1.2
+Version: 0.1.3
 */
 
 /**
@@ -18,6 +18,14 @@ Version: 0.1.2
     padding: 10%;
 }
 
+.container {
+    font-weight: inherit;
+}
+
+.st-pink {
+    color: pink;
+}
+
 /*自前でヘッダーを設定*/
 .header-nest {
     background-image: url("https://cast-manager-test.com/wp-content/uploads/2022/09/bg_image.png");
@@ -25,6 +33,26 @@ Version: 0.1.2
     background-color: rgba(255, 255, 255, 0.2);
     background-blend-mode: lighten;
     padding: 20px 10px;
+}
+
+.title-bold {
+    font-weight: bold;
+    opacity: 0.7;
+
+}
+
+body {
+    font-family: 'Noto Sans JP', "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+}
+
+/*Top */
+div.top-image {
+    text-align: center;
+}
+
+div.top-image img {
+    padding: auto;
+    width: 60%;
 }
 
 /*Footer*/
@@ -79,9 +107,100 @@ div.container h2 {
 }
 
 .normal-nest {
-    width: 80%;
+    width: 90%;
     margin: auto;
 }
+
+/**
+* system 固定ページ用CSS
+*/
+.system-nest {
+    width: 80%;
+    margin: auto;
+    background-color: rgba(255, 253, 254, 0.913);
+    padding: 5px 20px;
+}
+
+/**
+* recruit 固定ページ用CSS
+*/
+.recruit-tb {
+    max-width: 70%;
+}
+
+.recruit-tb td {
+    background-color: white;
+}
+
+.recruit-tb .has-text-align-center {
+    background-color: #f8f8f5;
+}
+
+.qa-box {
+    padding: 10px;
+    width: 40%;
+    margin: auto;
+    border: 4px solid #ebc2c8;
+}
+
+@media screen and (max-width:780px) {
+    .recruit-tb {
+        max-width: 80%;
+    }
+
+    .recruit-tb td {
+        display: block;
+        text-align: center;
+    }
+
+    .recruit-tb th {
+        display: block;
+    }
+
+    .qa-box {
+        width: 80%;
+    }
+}
+
+/*固定ページ内でカスタムHTMLを使用しているためCSSを自前で各必要がある*/
+div.system_time {
+    background: linear-gradient(to right, #ffdcea 0%, #f9e0e2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdcea', endColorstr='#f9e0e2', GradientType=1);
+    outline: solid 1px #ffdcea;
+    outline-offset: 2px;
+    color: #e76593;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+div.system_time h3 {
+    all: initial;
+    color: #e76587;
+}
+
+.system-nest dl {
+    all: initial;
+    margin: auto;
+    max-width: 380px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #777;
+}
+
+.system-nest dt {
+    all: initial;
+    color: #777;
+}
+
+.system-nest dd {
+    all: initial;
+    font-size: 1rem;
+    color: #999;
+}
+
+
 
 div.description {
     text-align: center;
@@ -588,6 +707,13 @@ div.cast-nest {
         display: none;
     }
 
+    .container {
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+
     div.siteContent {
         width: 100%;
         margin: 0 auto;
@@ -698,4 +824,20 @@ div.cast-nest {
 
 .siteFooter li>a {
     color: white;
+}
+
+a {
+    color: #5484C8;
+    text-decoration: underline;
+}
+
+@media screen and (max-width:991px) {
+    nav li.menu-item {
+        text-align: center;
+    }
+
+    div.vk-mobile-nav {
+        background-color: #fef7f7;
+
+    }
 }
