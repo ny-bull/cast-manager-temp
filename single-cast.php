@@ -1,29 +1,23 @@
 <?php get_header(); ?>
 
-<div class="section page-header">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<h1 class="page-header_pageTitle">セラピスト</h1>
-			</div>
-		</div>
-	</div>
-</div>
 <div class="section breadSection">
-	<div class="container">
-		<div class="row">
-			<ol class="breadcrumb" itemtype="http://schema.org/BreadcrumbList">
-				<li id="panHome" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-					<a itemprop="item" href="https://sample.oilnoko.com/"><span itemprop="name"><i class="fa fa-home"></i> HOME</span></a>
-				</li>
-				<li id="panCast" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-					<a itemprop="item" href="https://sample.oilnoko.com/cast"><span itemprop="name"> セラピスト一覧</span></a>
-				</li>
-				<li>
-					<span>セラピスト</span></li>
-				</ol>
-		</div>
-	</div>
+    <div class="container">
+        <div class="row">
+            <ol class="breadcrumb" itemtype="http://schema.org/BreadcrumbList">
+                <li id="panHome" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <a itemprop="item" href="https://cast-manager-test.com/"><span itemprop="name"><i
+                                class="fa fa-home"></i> HOME</span></a>
+                </li>
+                <li id="panCast" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <a itemprop="item" href="https://cast-manager-test.com/therapist"><span itemprop="name">
+                            セラピスト一覧</span></a>
+                </li>
+                <li>
+                    <span>セラピスト</span>
+                </li>
+            </ol>
+        </div>
+    </div>
 </div>
 
 <?php
@@ -53,14 +47,14 @@ do_action( 'lightning_breadcrumb_after' );
 ?>
 
 <div class="<?php lightning_the_class_name( 'siteContent' ); ?>">
-<?php do_action( 'lightning_siteContent_prepend' ); ?>
-<div class="container">
-<?php do_action( 'lightning_siteContent_container_prepend' ); ?>
-<div class="row">
-<div class="<?php lightning_the_class_name( 'mainSection' ); ?>" id="main" role="main">
-<?php do_action( 'lightning_mainSection_prepend' ); ?>
+    <?php do_action( 'lightning_siteContent_prepend' ); ?>
+    <div class="container">
+        <?php do_action( 'lightning_siteContent_container_prepend' ); ?>
+        <div class="row">
+            <div class="<?php lightning_the_class_name( 'mainSection' ); ?>" id="main" role="main">
+                <?php do_action( 'lightning_mainSection_prepend' ); ?>
 
-	<?php
+                <?php
 	/*
 		Archive title
 	/*-------------------------------------------*/
@@ -93,20 +87,20 @@ do_action( 'lightning_breadcrumb_after' );
 	do_action( 'lightning_loop_before' );
 	?>
 
-<div class="<?php lightning_the_class_name( 'postList' ); ?>">
+                <div class="<?php lightning_the_class_name( 'postList' ); ?>">
 
-<?php if ( have_posts() ) : ?>
-	<!-- セラピスト -->
-	<div class="cast-wrapper">
-		<div class="box-title"></div>
-		<div class="box-body">
-		<?php while (have_posts()):the_post();?>
-			<?php get_template_part('content',('cast'));?>
-		<?php endwhile;?>
-		</div>
-	</div>
+                    <?php if ( have_posts() ) : ?>
+                    <!-- セラピスト -->
+                    <div class="cast-wrapper">
+                        <div class="box-title"></div>
+                        <div class="box-body">
+                            <?php while (have_posts()):the_post();?>
+                            <?php get_template_part('content',('cast'));?>
+                            <?php endwhile;?>
+                        </div>
+                    </div>
 
-	<?php
+                    <?php
 	the_posts_pagination(
 		array(
 			'mid_size'					 => 1,
@@ -118,31 +112,34 @@ do_action( 'lightning_breadcrumb_after' );
 	);
 	?>
 
-	<?php else : // hove_posts() ?>
+                    <?php else : // hove_posts() ?>
 
-	<div class="well"><p><?php echo wp_kses_post( apply_filters( 'lightning_no_posts_text', __( 'No posts.', 'lightning' ) ) ); ?></p></div>
+                    <div class="well">
+                        <p><?php echo wp_kses_post( apply_filters( 'lightning_no_posts_text', __( 'No posts.', 'lightning' ) ) ); ?>
+                        </p>
+                    </div>
 
-<?php endif; // have_post() ?>
+                    <?php endif; // have_post() ?>
 
-</div><!-- [ /.postList ] -->
+                </div><!-- [ /.postList ] -->
 
-<?php do_action( 'lightning_loop_after' ); ?>
-<?php do_action( 'lightning_mainSection_append' ); ?>
-</div><!-- [ /.mainSection ] -->
+                <?php do_action( 'lightning_loop_after' ); ?>
+                <?php do_action( 'lightning_mainSection_append' ); ?>
+            </div><!-- [ /.mainSection ] -->
 
 
 
-<?php if ( lightning_is_subsection_display() ){ ?>
-	<div class="<?php lightning_the_class_name( 'sideSection' ); ?>">
-	<?php get_sidebar( get_post_type() ); ?>
-	</div><!-- [ /.subSection ] -->
-<?php } ?>
+            <?php if ( lightning_is_subsection_display() ){ ?>
+            <div class="<?php lightning_the_class_name( 'sideSection' ); ?>">
+                <?php get_sidebar( get_post_type() ); ?>
+            </div><!-- [ /.subSection ] -->
+            <?php } ?>
 
-<?php do_action( 'lightning_additional_section' ); ?>
+            <?php do_action( 'lightning_additional_section' ); ?>
 
-</div><!-- [ /.row ] -->
-<?php do_action( 'lightning_siteContent_container_apepend' ); ?>
-</div><!-- [ /.container ] -->
-<?php do_action( 'lightning_siteContent_apepend' ); ?>
+        </div><!-- [ /.row ] -->
+        <?php do_action( 'lightning_siteContent_container_apepend' ); ?>
+    </div><!-- [ /.container ] -->
+    <?php do_action( 'lightning_siteContent_apepend' ); ?>
 </div><!-- [ /.siteContent ] -->
 <?php get_footer(); ?>

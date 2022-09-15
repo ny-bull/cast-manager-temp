@@ -48,12 +48,10 @@ body {
 /*Top */
 div.top-image {
     text-align: center;
+    width: 60%;
+    margin: 0 auto;
 }
 
-div.top-image img {
-    padding: auto;
-    width: 60%;
-}
 
 /*Footer*/
 footer li {
@@ -482,25 +480,81 @@ div.cast-nest {
 /**
  * キャスト個人ページ
  */
-.cast {
-    overflow: hidden;
-    border: 0px solid gray;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.22);
-    padding: 20px;
-}
-
 .cast-photo {
     padding: 10px;
-    width: 50%;
-    min-width: 300px;
-    float: left;
+    width: 20%;
+    margin: 0 auto;
 }
 
-.cast-profile {
+.flexslider {
+    margin-bottom: 30px;
+}
+
+h4.cast-name {
+    margin-bottom: 0px;
+    font-weight: bold;
+    font-size: 30px;
+    border-top: thin solid #666;
+    padding-top: 10px;
+}
+
+.cast-size {
+    font-weight: bold;
+    border-bottom: thin solid #666;
+    padding-bottom: 10px;
+}
+
+
+ul.cast-type {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+    padding-inline-start: initial;
+}
+
+.cast-type li {
+    display: inline;
+    color: goldenrod;
+    background-color: white;
+    padding: 5px 100px;
+    font-weight: bold;
+}
+
+.cast-profile-main {
     padding: 10px;
-    width: 50%;
-    min-width: 300px;
-    float: left;
+    text-align: center;
+}
+
+p.cast-cp {
+    color: rgb(243, 114, 185);
+    font-size: larger;
+    font-weight: bold;
+    text-align: center;
+}
+
+.cast-profile-meta {
+    border: thin solid #eee;
+    text-align: center;
+    padding: 40px 0;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.cast-profile-meta h2.prof-title {
+    border: none;
+    font-size: 1.6rem;
+    font-weight: normal;
+    letter-spacing: 0.2rem;
+    line-height: 1.4;
+    font-weight: bold;
+    color: #666;
+    padding: 0 10px;
+    margin: 0;
+}
+
+.cast-title span {
+    color: #666;
+    font-weight: bold;
 }
 
 .cast-schedule {
@@ -533,44 +587,6 @@ div.cast-nest {
     white-space: pre-wrap;
 }
 
-#slider,
-#thumbnail {
-    border: 5px solid #e58f8f;
-}
-
-#slider {
-    margin-bottom: -10px;
-    max-height: 600px;
-    overflow: hidden;
-}
-
-#slider ul {
-    overflow: hidden;
-}
-
-#thumbnail {
-    max-height: 170px;
-    overflow: hidden;
-}
-
-#thumbnail .slides li {
-    width: auto !important;
-}
-
-#thumbnail .slides img {
-    width: auto;
-    max-height: 170px;
-    -moz-user-select: none;
-}
-
-#thumbnail img {
-    opacity: 0.5;
-}
-
-#thumbnail .flex-active-slide img {
-    opacity: 1;
-    cursor: default;
-}
 
 /**
  * ツイッターアイコン
@@ -702,17 +718,27 @@ div.cast-nest {
  */
 @media screen and (max-width:780px) {
 
-    /* 画面サイズが480pxからはここを読み込む */
-    #thumbnail {
-        display: none;
-    }
-
     .container {
         width: 100%;
         padding-right: 0;
         padding-left: 0;
     }
 
+    .cast-photo {
+        width: 90%;
+    }
+
+    a.flex-next {
+        height: 20px;
+    }
+
+    a.flex-prev {
+        height: 20px;
+    }
+
+    .cast-type li {
+        padding: 5px 20px;
+    }
 
     div.siteContent {
         width: 100%;

@@ -81,9 +81,16 @@ function add_wp_footer_custom(){ ?>
 //wp_enqueue_style( 'animations', get_template_directory_uri() . '/css/flexslider.css' );        
 //wp_enqueue_script( 'flexslider', get_template_directory_uri() .  '/js/jquery.flexslider-min.js', array( 'jquery' ), null,true );
 
-wp_enqueue_style( 'animations', get_bloginfo( 'stylesheet_directory').'/css/flexslider.css');
-wp_enqueue_script( 'flexslider', get_bloginfo( 'stylesheet_directory').'/js/jquery.flexslider-min.js', array('jquery'), null, true );
-
+//wp_enqueue_style( 'animations', get_bloginfo( 'stylesheet_directory').'/css/flexslider.css');
+//wp_enqueue_script( 'flexslider', get_bloginfo( 'stylesheet_directory').'/js/jquery.flexslider-min.js', array('jquery'), null, true );
+function my_scripts(){
+    wp_enqueue_script( 'jquery' );
+    if(is_single()){
+        wp_enqueue_style( 'flexslider-css', get_template_directory_uri() . '/css/flexslider.css');
+        wp_enqueue_script( 'flexslider-js', get_template_directory_uri() . '/js/jquery.flexslider-min.js', array(), '2.2.2', true);
+    }
+}
+add_action( 'wp_enqueue_scripts', 'my_scripts');
 /**
  * 個人ページに表示するスケジュール
  *
