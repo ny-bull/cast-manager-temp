@@ -4,6 +4,7 @@
  $cast_type_terms = get_the_terms($post->ID, 'krc_type'); //タイプタクソノミーを取得
  $cast_grade_terms = get_the_terms($post->ID, 'krc_grade'); //グレードタクソノミーを取得
  $cast_new_terms = get_the_terms($post->ID, 'krc_new'); //新人区分タクソノミーを取得
+ $shop_message = get_the_content();
 ?>
 
 <div class="cast">
@@ -35,7 +36,7 @@
     <p class="cast-cp">
         <?php echo esc_html($cast_fields['krc_pr'][0]);?>
     </p>
-    <?php echo '<script>console.log(' . json_encode($cast_fields) . ');</script>';?>
+    <?php echo '<script>console.log(' . json_encode($shop_message) . ');</script>';?>
     <ul class="cast-type">
         <?php foreach ($cast_type_terms as $val) : ?>
         <li><?php echo esc_html($val -> name); ?></li>
@@ -47,24 +48,50 @@
     </p>
     <div class="cast-profile-meta">
         <h2 class="prof-title">PROFILE
+            <span>
+                -プロフィール-
+            </span>
         </h2>
-        <span>
-            -プロフィール-
-        </span>
-        <div class="prof-deital">
+        <div class="prof-detail">
             <ul>
+                <?php if ( !empty($cast_fields['krc_blood'][0]) ):?>
                 <li>
-
+                    <div class="title">血液型</div>
+                    <div class="detail">
+                        <?php echo esc_html($cast_fields['krc_blood'][0]);?>
+                    </div>
                 </li>
+                <?php endif;?>
+                <?php if ( !empty($cast_fields['krc_hobby'][0]) ):?>
+                <li>
+                    <div class="title">趣味・マイブーム</div>
+                    <div class="detail">
+                        <?php echo esc_html($cast_fields['krc_hobby'][0]);?>
+                    </div>
+                </li>
+                <?php endif;?>
+                <?php if ( !empty($cast_fields['krc_person'][0]) ):?>
+                <li>
+                    <div class="title">性格</div>
+                    <div class="detail">
+                        <?php echo esc_html($cast_fields['krc_person'][0]);?>
+                    </div>
+                </li>
+                <?php endif;?>
+                <?php if ( !empty($cast_fields['krc_favorite'][0]) ):?>
+                <li>
+                    <div class="title">好きな男性のタイプ</div>
+                    <div class="detail">
+                        <?php echo esc_html($cast_fields['krc_favorite'][0]);?>
+                    </div>
+                </li>
+                <?php endif;?>
             </ul>
-        </div>
-        <div class="cast-pr">
-            <pre><?php echo $cast_fields['krc_pr'][0];?></pre>
         </div>
         <?php if ( !empty($cast_fields['tw_id'][0]) ):?>
         <h2 class="title">Twitter</h2>
         <div class="cast-tw">
-            <a class="twitter-timeline" data-width="300" data-height="400" data-chrome="noheader nofooter"
+            <a class="twitter-timeline" data-height="600" data-chrome="noheader nofooter"
                 href="https://twitter.com/<?php echo esc_html($cast_fields['tw_id'][0]);?>?ref_src=twsrc%5Etfw">Tweets
                 by <?php echo esc_html($cast_fields['tw_id'][0]);?>
             </a>
@@ -72,14 +99,47 @@
         </div>
         <?php endif;?>
     </div>
+    <a class="phone" href="tel:09060667925">
+        <i class="fas fa-phone"></i>
+        TEL確認
+    </a>
     <div class="cast-schedule">
-        <h3 class="sub-section">スケジュール</h3>
+        <h2 class="prof-title">SCHEDULE
+            <span>
+                -スケジュール-
+            </span>
+        </h2>
         <?php singlecalendar(get_the_ID());?>
-
-        <div class="wp-block-button is-style-fill">
-            <a href="/schedule" class="wp-block-button__link has-white-color has-text-color has-background">出勤情報はこちら</a>
-        </div>
     </div>
+
+    <div class="cast-intro">
+        <h2 class="prof-title">INTRODUCTION
+            <span>
+                -紹介文-
+            </span>
+        </h2>
+
+        <div class="shop-message">
+
+            <?php echo $shop_message;?>
+        </div>
+
+        <a class="phone" href="/schedule">
+            スケジュールを見る
+        </a>
+    </div>
+
+
+    <h2 class="title">Twitter</h2>
+    <div class="cast-tw">
+        <a class="twitter-timeline" data-height="600" data-chrome="noheader nofooter"
+            href="https://twitter.com/shiga_rose?ref_src=twsrc%5Etfw">Tweets
+        </a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+    <a class="phone" href="/therapist">
+        セラピスト一覧へ戻る
+    </a>
 </div>
 
 <script type="text/javascript">

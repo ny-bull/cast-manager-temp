@@ -108,7 +108,7 @@ function singlecalendar($id)
 	);
 	$today = strtotime(date("Y-m-d", strtotime("+3 hour")));
 	echo '<div class="krc_calendar clearfix">';
-	for ($i = 0;$i <= 4;$i++)
+	for ($i = 0;$i <= 6;$i++)
 	{
 		$yy = date('w', strtotime('+' . $i . ' day'));
 		$y = date('D', strtotime('+' . $i . ' day', $today));
@@ -118,7 +118,7 @@ function singlecalendar($id)
 		{
 			echo '<dd>';
 			if ($casttime['starttime'] !== '0') echo esc_html($casttime['starttime']);
-			echo ' ～ ';
+			echo ' - ';
 			if ($casttime['endtime'] !== '0') echo esc_html($casttime['endtime']);
 			echo '</dd></dl>';
 		}
