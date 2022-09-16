@@ -408,3 +408,9 @@ function system_nest( $atts, $content = null ) {
     return '<div class="system-nest">'.do_shortcode($content).'</div>';
 }
 add_shortcode('system-nest', 'system_nest');
+
+// text nest
+function text_nest( $atts, $content = null ) {
+    return '<div class="text-nest">'.do_shortcode($content).'</div>';
+}
+add_shortcode('text-nest', 'text_nest');

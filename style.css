@@ -45,6 +45,22 @@ Version: 0.1.3
 
 }
 
+
+/*#region 記事系コンテンツの共通UI*/
+div.text-nest {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.text-nest strong {
+    color: #e76593;
+}
+
+div.text-nest h3 {
+    font-size: 15px;
+    color: #777 !important;
+}
+
 body {
     font-family: 'Noto Sans JP', "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
     color: #777;
@@ -72,7 +88,7 @@ div.siteContent {
     padding: 0;
 }
 
-/*h2に背景画像を付与*/
+/*ページ共通タイトル系*/
 div.container h2 {
     background-image: url("https://cast-manager-test.com/wp-content/uploads/2022/09/bg_title.png");
     background-size: 90px 90px;
@@ -88,6 +104,11 @@ div.container h2 {
     color: #666;
     margin: 0;
     text-align: center;
+}
+
+h2.prof-title span {
+    display: block;
+    font-size: 1.2rem;
 }
 
 @media screen and (max-width:780px) {
@@ -598,10 +619,6 @@ p.cast-cp {
     margin: 20px auto;
 }
 
-h2.prof-title span {
-    display: block;
-    font-size: 1.2rem;
-}
 
 
 .prof-detail ul {
