@@ -1,5 +1,7 @@
+<?php
+ $link = get_the_title(); //カスタムフィールドを全部取得
+?>
 <?php get_header(); ?>
-
 <div class="section breadSection">
     <div class="container">
         <div class="row">
@@ -10,10 +12,10 @@
                 </li>
                 <li id="panCast" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
                     <a itemprop="item" href="https://cast-manager-test.com/therapist"><span itemprop="name">
-                            セラピスト一覧</span></a>
+                            therapist</span></a>
                 </li>
                 <li>
-                    <span>セラピスト</span>
+                    <span><?php echo esc_html($link) ?></span>
                 </li>
             </ol>
         </div>

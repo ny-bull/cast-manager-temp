@@ -5,6 +5,7 @@
  $cast_grade_terms = get_the_terms($post->ID, 'krc_grade'); //グレードタクソノミーを取得
  $cast_new_terms = get_the_terms($post->ID, 'krc_new'); //新人区分タクソノミーを取得
  $shop_message = get_the_content();
+ $link = get_the_title(); //カスタムフィールドを全部取得
 ?>
 
 <div class="cast">
@@ -36,7 +37,7 @@
     <p class="cast-cp">
         <?php echo esc_html($cast_fields['krc_pr'][0]);?>
     </p>
-    <?php echo '<script>console.log(' . json_encode($shop_message) . ');</script>';?>
+    <?php echo '<script>console.log(' . json_encode($link) . ');</script>';?>
     <ul class="cast-type">
         <?php foreach ($cast_type_terms as $val) : ?>
         <li><?php echo esc_html($val -> name); ?></li>

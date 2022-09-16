@@ -540,7 +540,7 @@ div.cast-nest {
 /*#region キャスト個人ページ用CSS*/
 .cast-photo {
     padding: 10px;
-    width: 20%;
+    width: 30%;
     margin: 0 auto;
 }
 
@@ -603,10 +603,10 @@ h2.prof-title span {
     font-size: 1.2rem;
 }
 
+
 .prof-detail ul {
     padding-inline-start: initial;
-    text-align: left;
-    padding-left: 20px;
+    text-align: center;
 
 }
 
@@ -706,7 +706,6 @@ a.phone {
     text-decoration: none;
     padding: 24px 2px;
     display: block;
-    color: #ff9900;
     font-weight: bold;
 }
 
@@ -740,6 +739,7 @@ a.phone {
         padding: 10px 0;
         color: #777;
     }
+
 }
 
 div.twitter-timeline {
@@ -784,6 +784,16 @@ div.shop-message {
         width: 90%;
     }
 
+    div.prof-detail {
+        padding: 0 30px;
+    }
+
+    .prof-detail ul {
+        all: initial;
+        padding-inline-start: initial;
+        text-align: left;
+
+    }
 }
 
 /*#endregion */
