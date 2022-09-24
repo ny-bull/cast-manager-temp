@@ -44,6 +44,11 @@ do_action( 'lightning_header_before' );
                         <span><?php lightning_print_headlogo(); ?></span>
                     </a>
                 </<?php echo $title_tag; ?>>
+                <div class="header_icons">
+                    <a href="http://line.me/R/ti/p/%40096hzoga" target="_blank"><i class="fab fa-line"></i></a>
+                    <a href="https://twitter.com/shiga_rose" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a class="tel" href="tel:09060667925"><i class="fas fa-phone"></i></a>
+                </div>
                 <?php do_action( 'lightning_header_logo_after' ); ?>
             </div>
 

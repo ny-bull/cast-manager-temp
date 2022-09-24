@@ -9,6 +9,40 @@ Tags:
 Version: 0.1.3
 */
 
+/*region サイトヘッダー(スマホのみ) */
+.header_icons {
+    display: none;
+}
+
+@media screen and (max-width:780px) {
+
+    .siteHeader img {
+        margin: 0;
+    }
+
+    .siteHeader_logo img {
+        max-height: 30px;
+    }
+
+    .siteHeader_logo {
+        padding: 5px 10px;
+        display: inline-block;
+        float: left;
+        width: auto;
+    }
+
+    .header_icons {
+        display: inline-block;
+        padding: 7px 0;
+    }
+
+    .header_icons a {
+        padding-left: 10px;
+    }
+}
+
+/*#endregion*/
+
 /*#region ページ共通設定*/
 body {
     font-family: 'Noto Sans JP', "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
