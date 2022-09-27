@@ -38,6 +38,7 @@ Version: 0.1.3
 
     .header_icons a {
         padding-left: 10px;
+        color: initial !important;
     }
 }
 
@@ -76,6 +77,7 @@ body {
 .header-nest h3 {
     color: #eee !important;
     opacity: 0.8;
+    margin: 10px 0;
 }
 
 
@@ -171,13 +173,6 @@ h2.prof-title span {
     color: lightblue;
 }
 
-.siteFooter {
-    background-color: #81d8d0;
-}
-
-.siteFooter li>a {
-    color: white;
-}
 
 
 @media screen and (max-width:991px) {
@@ -206,6 +201,64 @@ h2.prof-title span {
         font-size: 14px !important;
     }
 }
+
+/*icon カラー*/
+.fa-line {
+    color: #2bac38;
+}
+
+.fa-twitter {
+    color: #1da1f2;
+}
+
+.fa-phone {
+    color: #ccbd99;
+}
+
+/*フローティングバナ-*/
+.floating-banner {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 55px;
+    z-index: 100;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #81d8d0;
+}
+
+.floating-banner .leftbox {
+    width: 55px;
+    height: 55px;
+    font-size: 1.2rem;
+}
+
+
+.floating-banner .mainbox {
+    width: calc((100% - 55px) / 2);
+    height: 55px;
+    font-size: 1.2rem;
+}
+
+.floating-banner .rightbox {
+    width: 75px;
+    height: 55px;
+    font-size: 1.2rem;
+}
+
+.floating-banner a {
+    color: #fff;
+    text-align: center;
+}
+
+@media screen and (min-width:780px) {
+    .floating-banner {
+        display: none;
+    }
+}
+
 
 /*#endregion */
 
@@ -250,6 +303,81 @@ footer div.box-follow li {
     border-radius: 50%;
     list-style-type: none;
 }
+
+.siteFooter {
+    background-color: #81d8d0;
+}
+
+.siteFooter .footerWidget li>a {
+    color: white;
+}
+
+.siteFooter .box-follow li>a {
+    color: white;
+}
+
+footer .footer_bottom {
+    padding: 30px 20px;
+    background-color: #fff;
+    color: #81d8d0;
+}
+
+footer figure {
+    text-align: center;
+}
+
+footer img {
+    max-width: 50%;
+}
+
+.footer_bottom a {
+    color: #81d8d0;
+}
+
+.footer_bottom ul {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+    justify-content: space-evenly;
+    padding: 0 !important;
+}
+
+.footer_bottom li {
+    list-style-type: none;
+}
+
+.footer_bottom p {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.copyright {
+    padding: 20px;
+    color: #81d8d0;
+    text-align: center;
+    line-height: 1.4;
+    background: #fff;
+    margin-bottom: 55px;
+}
+
+@media screen and (min-width:780px) {
+    .copyright {
+        margin-bottom: 0px;
+    }
+
+    footer img {
+        max-width: 20%;
+    }
+
+    .footer_bottom li {
+        font-size: 1rem;
+    }
+}
+
+
 
 /*#endregion */
 
